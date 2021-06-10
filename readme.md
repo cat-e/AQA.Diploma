@@ -28,14 +28,14 @@
 - склонировать репозиторий `git clone`
 - для запуска контейнеров с MySql, PostgreSQL и Node.js использовать команду `docker-compose up -d --build` (необходим установленный Docker); чтобы образ не пересобирался каждый раз необходимо убрать флаг `--build`
 - запуск приложения:
-  - для запуска под MySQL использовать команду
+  - для запуска под MySQL перейти в каталог /artifacts и использовать команду
 `java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar aqa-shop.jar` 
-   - для запуска под PostgreSQL использовать команду
+   - для запуска под PostgreSQL в каталог /artifacts использовать команду
 `java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar aqa-shop.jar`
 - запуск тестов (Allure):
-  - для запуска под MySQL использовать команду
+  - для запуска под MySQL использовать команду из корневой директории
 `gradlew -Ddb.url=jdbc:mysql://localhost:3306/app clean test` 
-  - для запуска под PostgreSQL использовать команду
+  - для запуска под PostgreSQL использовать команду из корневой директории
 `gradlew -Ddb.url=jdbc:postgresql://localhost:5432/app clean test`
 
 *По умолчанию тесты запускаются для "http://localhost:8080/", чтобы изменить адрес, необходимо дополнительно указать `-Dsut.url=...`
